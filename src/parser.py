@@ -8,7 +8,7 @@ def read_srt(path:str) -> SubtitleFile:
 
     subtitles = []
 
-    with open(path, 'r') as file:
+    with open(path, 'r', encoding='utf-8') as file:
         content = file.read()
         matches = list(re.finditer(pattern, content))
 
