@@ -15,4 +15,4 @@ GUI utility for merging SRT subtitle files.
 See Releases section.
 
 ## Build
-pyinstaller --onefile --windowed --name "Subtitle Fusion" --icon=assets/icon.ico --add-data "assets;assets" main.py 
+pyinstaller --onefile --windowed --name "SubtitleFusion" --icon=assets/icon.ico --add-data "assets;assets" main.py 
