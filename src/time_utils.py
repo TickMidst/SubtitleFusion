@@ -14,14 +14,18 @@ def parse_timestamp(time_str: str) -> int:
     return milliseconds + seconds_ms + minutes_ms + hours_ms
 
 
-def format_timestamp(ms: int) -> str:
+def format_timestamp(total_ms: int) -> str:
     '''
     Переводит милисекунды в строки типа "чч:мм:сс,мсмсмс" 
     '''
+    ms = total_ms
+    h = f"{ms // 3_600_000:02}"
+    ms = ms % 3_600_000
 
-            
+    m = f"{ms // 60_000:02}"
+    ms = ms % 60_000
 
+    s = f"{ms // 1000:02}"
+    ms_str = f"{ms % 1000:03}"
 
-# parse_timestamp('01:09:20,924')
-print(parse_timestamp('01:09:20,924'))
-# вывод - 4160924
+    return f"{h}:{m}:{s},{ms_str}"
